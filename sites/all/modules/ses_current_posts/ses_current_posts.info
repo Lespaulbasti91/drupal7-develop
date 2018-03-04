@@ -2,3 +2,6 @@ name = SES Currents Posts
 description = Custom Module for showing Links to a Post
 core = 7.x
 package = SES Custom
+
+; NEW LINE
+configure = admin/config/content/ses_current_posts
