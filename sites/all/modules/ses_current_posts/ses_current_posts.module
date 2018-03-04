@@ -68,14 +68,13 @@ function ses_current_posts_contents() {
   return $query;
 }
 
-
 /**
  * Implements hook_block_view().
  */
 function ses_current_posts_block_view($delta = '') {
   switch ($delta) {
     case 'ses_current_posts':
-      if (user_access('acces content')) {
+      if (user_access('access content')) {
         // Retrieve and process data here.
         // Use our custom function to retrieve data.
         $result = ses_current_posts_contents();
@@ -92,10 +91,11 @@ function ses_current_posts_block_view($delta = '') {
           $block['content'] = t('No posts available');
         }
         else {
-          // Pass data throug theme function.
+          // Pass data through theme function.
           $block['content'] = theme('item_list', array('items' => $items));
         }
       }
+
       return $block;
   }
 }
